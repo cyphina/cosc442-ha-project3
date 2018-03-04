@@ -117,9 +117,9 @@ public class VendingMachineTest {
 	@Test
 	public void testNotEnoughMoneyPurchase() {
 		VendingMachineItem vItem = new VendingMachineItem("CottonCandy", 15.0f);
-		vMachine.addItem(vItem, VendingMachine.A_CODE);
-		assertFalse(vMachine.makePurchase(VendingMachine.A_CODE));	
-		assertEquals(vMachine.getItem(VendingMachine.A_CODE), vItem);
+		vMachine.addItem(vItem, VendingMachine.C_CODE);
+		assertFalse(vMachine.makePurchase(VendingMachine.C_CODE));	
+		assertEquals(vMachine.getItem(VendingMachine.C_CODE), vItem);
 	}
 
 	/*Test to ensure we can't purchase an item from an empty slot.*/

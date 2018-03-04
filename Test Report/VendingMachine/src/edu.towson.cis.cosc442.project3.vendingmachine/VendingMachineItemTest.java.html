@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>VendingMachineItemTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">edu.towson.cis.cosc442.project3.vendingmachine (Mar 4, 2018 4:06:31 PM)</a> &gt; <a href="../../index.html" class="el_group">VendingMachine</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineItemTest.java</span></div><h1>VendingMachineItemTest.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author Cyphina
+ *
+ */
+<span class="fc" id="L16">public class VendingMachineItemTest {</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 * I liked naming every test item seperately so I didn't use setup to create the same kinds of vending machine items
+	 * to test. 
+	 */
+	@Before
+	public void setUp() throws Exception {
+
+<span class="fc" id="L26">	}</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+<span class="fc" id="L33">	}</span>
+
+	/**
+	 * Test the vending machine constructor
+	 */
+	@Test
+	public void testVendingMachineItem() {
+<span class="fc" id="L40">		VendingMachineItem bananaCandy = new VendingMachineItem(&quot;BananaCandy&quot;,7.0);</span>
+<span class="fc" id="L41">		assertEquals(bananaCandy.getPrice(), 7.0, 0.001);</span>
+<span class="fc" id="L42">		assertEquals(bananaCandy.getName(), &quot;BananaCandy&quot;);	</span>
+<span class="fc" id="L43">	}</span>
+	
+	/**
+	 * Test the vending machine constructor exception handling properly triggers
+	 */
+	@Test
+	public void testVendingMachineItemException() {
+		try {
+<span class="nc" id="L51">			VendingMachineItem mangoCandy = new VendingMachineItem(&quot;MangoCandy&quot;,-7.0);</span>
+<span class="nc" id="L52">			fail();</span>
+<span class="nc" id="L53">		}</span>
+<span class="fc" id="L54">		catch(VendingMachineException e)</span>
+		{
+<span class="fc" id="L56">			assertEquals(e.getMessage(),&quot;Price cannot be less than zero&quot;);</span>
+		}
+<span class="fc" id="L58">	}</span>
+	
+	/**
+	 * Ensures that the VendingMachineItem correctly gets its name from GetName() accessor
+	 */
+	@Test
+	public void testGetName() {
+<span class="fc" id="L65">		VendingMachineItem coconutCandy = new VendingMachineItem(&quot;CoconutCandy&quot;,5.0);</span>
+<span class="fc" id="L66">		assertEquals(coconutCandy.getName(), &quot;CoconutCandy&quot;);	</span>
+<span class="fc" id="L67">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineItem#getPrice()}.
+	 */
+	@Test
+	public void testGetPrice() {
+<span class="fc" id="L74">		VendingMachineItem pineapplyCandy = new VendingMachineItem(&quot;pineapplyCandy&quot;, 3.0);</span>
+<span class="fc" id="L75">		assertEquals(pineapplyCandy.getPrice(), 3.0,0.001);</span>
+<span class="fc" id="L76">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>edu.towson.cis.cosc442.project3.vendingmachine (Mar 4, 2018 4:06:31 PM)</div></body></html>
